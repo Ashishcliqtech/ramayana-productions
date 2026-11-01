@@ -35,7 +35,7 @@ export default function Navbar() {
   }, [open])
 
   return (
-    <header className={`navbar ${scrolled || open ? 'is-solid' : ''}`}>
+    <header className={`navbar ${scrolled || open ? 'is-solid' : ''} ${open ? 'menu-open' : ''}`}>
       <div className="container navbar-inner">
         <Logo />
 
