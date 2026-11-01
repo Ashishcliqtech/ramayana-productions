@@ -59,7 +59,7 @@ export default function Footer() {
             {company.phone && (
               <li>
                 <Phone size={16} aria-hidden="true" />
-                <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a>
+                <a href={`tel:${company.phone.replace(/[^\d+]/g, '')}`}>{company.phone}</a>
               </li>
             )}
             {company.address && (

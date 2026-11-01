@@ -4,7 +4,7 @@ import Philosophy from '../sections/home/Philosophy'
 import FounderPreview from '../sections/home/FounderPreview'
 import ServicesShowcase from '../sections/home/ServicesShowcase'
 import CapabilitiesStrip from '../sections/home/CapabilitiesStrip'
-import FeaturedWork from '../sections/home/FeaturedWork'
+import ProductionGallery from '../sections/home/ProductionGallery'
 import WhyChoose from '../sections/home/WhyChoose'
 import TeamIntro from '../sections/home/TeamIntro'
 import CTASection from '../components/CTASection'
@@ -28,7 +28,7 @@ export default function Home() {
       <Divider />
       <ServicesShowcase />
       <CapabilitiesStrip />
-      <FeaturedWork />
+      <ProductionGallery />
       <WhyChoose />
       <TeamIntro />
       <CTASection />

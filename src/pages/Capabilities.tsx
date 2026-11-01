@@ -38,7 +38,8 @@ export default function Capabilities() {
         text="Dedicated creative professionals, experienced leadership and scalable capacity — carrying your vision from idea to final delivery."
         motif="commercial"
         palette={['#14161a', '#2a2e36', '#d8c08f']}
-        imageAlt="A spotlight over a production stage"
+        image="/images/f.jpeg"
+        imageAlt="A video editor working on a production timeline"
       />
 
       <section className="section">
@@ -83,7 +84,7 @@ export default function Capabilities() {
             </ol>
           </div>
           <ImageReveal className="split-media">
-            <CinematicImage alt="Film strip and a cinematic reel" motif="film" palette={['#0f0f12', '#262228', '#C6A36B']} variant={1} />
+            <CinematicImage src="/images/a.jpeg" alt="A strip of film held up to warm studio lights" motif="film" palette={['#0f0f12', '#262228', '#C6A36B']} variant={1} />
           </ImageReveal>
         </div>
       </section>

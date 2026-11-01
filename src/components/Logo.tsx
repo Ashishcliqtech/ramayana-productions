@@ -16,11 +16,7 @@ export function Monogram({ size = 44 }: { size?: number }) {
 export default function Logo({ onClick }: { onClick?: () => void }) {
   return (
     <Link to="/" className="logo" aria-label={`${company.name} — Home`} onClick={onClick}>
-      <Monogram />
-      <span className="logo-text">
-        <span className="logo-top">{company.wordmarkTop}</span>
-        <span className="logo-bottom">{company.wordmarkBottom}</span>
-      </span>
+      <img className="logo-image" src="/images/logorec.jpeg" alt="" />
     </Link>
   )
 }

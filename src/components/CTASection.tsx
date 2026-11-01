@@ -15,8 +15,8 @@ export default function CTASection({
   text = 'Share your idea with us. From short-form digital content to grand cinematic storytelling, we will help bring your vision to life.',
   primaryLabel = 'Start a Project',
   primaryTo = '/contact',
-  secondaryLabel = 'Explore Our Work',
-  secondaryTo = '/work',
+  secondaryLabel = 'Explore Our Services',
+  secondaryTo = '/services',
 }: Props) {
   return (
     <section className="cta-section" aria-labelledby="cta-title">

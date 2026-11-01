@@ -45,10 +45,8 @@ export const company: Company = {
   /** PLACEHOLDER — replace with the official domain (also update public/sitemap.xml, public/robots.txt, index.html) */
   siteUrl: 'https://www.your-domain.com',
 
-  /** PLACEHOLDER — replace with the official enquiry email address */
-  email: 'hello@your-domain.com',
-  /** Leave empty until an official number is supplied; the phone line is hidden when empty */
-  phone: '',
+  email: 'contact@ramayanaproductions.com',
+  phone: '+91. 7506846678',
   /** Leave empty until an official address is supplied; the location block is hidden when empty */
   address: '',
 
@@ -61,15 +59,15 @@ export const company: Company = {
     x: '',
   },
 
-  /** Optional hero background video (mp4). Leave empty to use the generated cinematic backdrop. */
-  heroVideoUrl: '',
+  /** Hero background video; the cinematic still is used when motion is reduced. */
+  heroVideoUrl: '/images/ef.mp4',
 
   legal: {
     legalName: '[Registered legal name of the company]',
     registeredAddress: '[Registered business address]',
     governingLaw: '[Governing law and jurisdiction]',
     lastUpdated: '[Date of last update]',
-    privacyContact: 'hello@your-domain.com',
+    privacyContact: 'contact@ramayanaproductions.com',
   },
 }
 
@@ -77,7 +75,6 @@ export const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
-  { to: '/work', label: 'Work' },
   { to: '/capabilities', label: 'Capabilities' },
   { to: '/founders-vision', label: "Founder's Vision" },
 ] as const

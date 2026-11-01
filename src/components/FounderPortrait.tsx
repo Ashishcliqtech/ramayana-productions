@@ -2,13 +2,14 @@ import { useState } from 'react'
 import { founder } from '../data/founder'
 import { Monogram } from './Logo'
 
-/** Elegant portrait frame. Shows the real photograph when founder.photo is set; otherwise a refined placeholder. */
+/** Displays the supplied founder photograph with a branded fallback. */
 export default function FounderPortrait({ className = '' }: { className?: string }) {
   const [failed, setFailed] = useState(false)
   const hasPhoto = Boolean(founder.photo) && !failed
+  const hasApprovedIdentity = !founder.name.startsWith('[') && !founder.designation.startsWith('[')
 
   return (
-    <figure className={`portrait ${className}`.trim()}>
+    <figure className={`portrait ${hasPhoto ? '' : 'portrait-placeholder-frame'} ${className}`.trim()}>
       <div className="portrait-frame">
         <span className="portrait-corner tl" aria-hidden="true" />
         <span className="portrait-corner br" aria-hidden="true" />
@@ -22,10 +23,12 @@ export default function FounderPortrait({ className = '' }: { className?: string
           </div>
         )}
       </div>
-      <figcaption>
-        <strong>{founder.name}</strong>
-        <span>{founder.designation}</span>
-      </figcaption>
+      {hasApprovedIdentity && (
+        <figcaption>
+          <strong>{founder.name}</strong>
+          <span>{founder.designation}</span>
+        </figcaption>
+      )}
     </figure>
   )
 }

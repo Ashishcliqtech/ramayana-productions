@@ -35,7 +35,8 @@ export default function About() {
         text="Ramayana Productions is a forward-thinking film production house driven by a passion for storytelling."
         motif="documentary"
         palette={['#11161a', '#26323a', '#C6A36B']}
-        imageAlt="Cinematic landscape at dusk"
+        image="/images/d.jpeg"
+        imageAlt="A camera operator working under blue production lights"
       />
 
       <section className="section">
@@ -47,12 +48,18 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section section-alt">
-        <div className="container split">
-          <ImageReveal className="split-media">
-            <CinematicImage alt="Warm light cutting through a dark studio" motif="studio" palette={['#16120d', '#2c2418', '#C6A36B']} />
+      <section className="section section-alt about-philosophy">
+        <div className="container split about-philosophy-grid">
+          <ImageReveal className="split-media about-philosophy-media">
+            <CinematicImage
+              src="/images/b.jpeg"
+              alt="A camera operator filming a scene on location"
+              motif="studio"
+              palette={['#16120d', '#2c2418', '#C6A36B']}
+            />
+            <span className="about-philosophy-caption">Storytelling, shaped frame by frame</span>
           </ImageReveal>
-          <div className="split-copy">
+          <div className="split-copy about-philosophy-copy">
             <SectionHeading eyebrow="Our Philosophy" title="Every story deserves heart, depth and visual poetry." />
             <Reveal delay={0.1}>
               <p className="lede">
@@ -60,6 +67,46 @@ export default function About() {
               </p>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      <section className="section about-production-gallery" aria-label="Production photography">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Inside the Craft"
+            title="Every frame begins behind the camera."
+            text="A glimpse of the tools, locations and craft that shape cinematic storytelling."
+          />
+          <div className="about-production-grid">
+            <figure className="about-production-image about-production-image-wide">
+              <CinematicImage
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85"
+                alt="A clapperboard marks the start of a film scene"
+                motif="film"
+                palette={['#0f0f12', '#262228', '#C6A36B']}
+              />
+              <figcaption>On-set direction</figcaption>
+            </figure>
+            <figure className="about-production-image">
+              <CinematicImage
+                src="/images/b.jpeg"
+                alt="A camera operator filming a scene on location"
+                motif="studio"
+                palette={['#16120d', '#2c2418', '#C6A36B']}
+              />
+              <figcaption>Production in motion</figcaption>
+            </figure>
+            <figure className="about-production-image">
+              <CinematicImage
+                src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1200&q=85"
+                alt="A film projector casting light into a dark room"
+                motif="film"
+                palette={['#0f0f12', '#262228', '#C6A36B']}
+              />
+              <figcaption>The magic of the final frame</figcaption>
+            </figure>
+          </div>
+          <p className="about-production-note">Photography is illustrative and does not depict completed Ramayana Productions projects.</p>
         </div>
       </section>
 

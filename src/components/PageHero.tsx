@@ -5,6 +5,7 @@ import { WordReveal } from './Reveal'
 import type { Motif, Palette } from '../types'
 
 interface Props {
+  className?: string
   eyebrow: string
   title: string
   text?: ReactNode
@@ -17,6 +18,7 @@ interface Props {
 
 /** Shared cinematic header for inner pages. */
 export default function PageHero({
+  className = '',
   eyebrow,
   title,
   text,
@@ -28,7 +30,7 @@ export default function PageHero({
 }: Props) {
   const reduce = useReducedMotion()
   return (
-    <section className="page-hero">
+    <section className={`page-hero ${className}`.trim()}>
       <div className="page-hero-bg">
         <CinematicImage src={image} alt={imageAlt} motif={motif} palette={palette} eager />
       </div>

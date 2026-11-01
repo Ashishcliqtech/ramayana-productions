@@ -8,8 +8,6 @@ const About = lazy(() => import('./pages/About'))
 const FounderVision = lazy(() => import('./pages/FounderVision'))
 const Services = lazy(() => import('./pages/Services'))
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
-const Portfolio = lazy(() => import('./pages/Portfolio'))
-const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
 const Capabilities = lazy(() => import('./pages/Capabilities'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Privacy = lazy(() => import('./pages/Privacy'))
@@ -25,8 +23,6 @@ export default function App() {
         <Route path="founders-vision" element={<FounderVision />} />
         <Route path="services" element={<Services />} />
         <Route path="services/:slug" element={<ServiceDetail />} />
-        <Route path="work" element={<Portfolio />} />
-        <Route path="work/:slug" element={<ProjectDetail />} />
         <Route path="capabilities" element={<Capabilities />} />
         <Route path="contact" element={<Contact />} />
         <Route path="privacy-policy" element={<Privacy />} />

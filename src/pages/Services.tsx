@@ -19,12 +19,14 @@ export default function Services() {
   return (
     <>
       <PageHero
+        className="services-page-hero"
         eyebrow="Our Services"
         title="From short-form to grand cinema."
         text="End-to-end production capabilities that bring your vision to life with precision, creativity and unmatched quality."
         motif="series"
         palette={['#1b1712', '#3a2c18', '#C6A36B']}
-        imageAlt="Layered cinematic frames"
+        image="/images/g.jpeg"
+        imageAlt="A film crew preparing a camera setup on location"
       />
 
       <nav className="service-jump container" aria-label="Jump to a service">
@@ -34,6 +36,10 @@ export default function Services() {
           </a>
         ))}
       </nav>
+
+      <p className="container services-image-note">
+        Production imagery is illustrative and does not depict completed client projects.
+      </p>
 
       {services.map((s) => (
         <section key={s.slug} id={s.slug} className={`service-feature layout-${s.layout}`} aria-labelledby={`${s.slug}-title`}>

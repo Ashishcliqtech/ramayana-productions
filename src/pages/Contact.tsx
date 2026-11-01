@@ -13,7 +13,6 @@ import type { EnquiryData, EnquiryErrors } from '../utils/enquiry'
 
 type Status = 'idle' | 'submitting' | 'sent' | 'mailto' | 'error'
 
-const OTHER = 'Other / Not sure yet'
 const socialLabels = { instagram: 'Instagram', youtube: 'YouTube', facebook: 'Facebook', linkedin: 'LinkedIn', x: 'X' } as const
 
 export default function Contact() {
@@ -51,9 +50,9 @@ export default function Contact() {
     e.preventDefault()
     const found = validateEnquiry(data)
     setErrors(found)
-    setTouched({ name: true, email: true, phone: true, service: true, message: true })
+    setTouched({ name: true, email: true, phone: true, message: true })
     if (Object.keys(found).length > 0) {
-      const first = (['name', 'email', 'phone', 'service', 'message'] as const).find((k) => found[k])
+      const first = (['name', 'phone', 'email', 'message'] as const).find((k) => found[k])
       if (first) document.getElementById(`field-${first}`)?.focus()
       return
     }
@@ -109,7 +108,7 @@ export default function Contact() {
             ) : (
               <form className="form" onSubmit={onSubmit} noValidate aria-label="Project enquiry form">
                 <div className="field">
-                  <label htmlFor="field-name">Name</label>
+                  <label htmlFor="field-name">Full name</label>
                   <input
                     id="field-name"
                     name="name"
@@ -131,6 +130,26 @@ export default function Contact() {
 
                 <div className="field-row">
                   <div className="field">
+                    <label htmlFor="field-phone">Phone number</label>
+                    <input
+                      id="field-phone"
+                      name="phone"
+                      type="tel"
+                      autoComplete="tel"
+                      value={data.phone}
+                      onChange={onChange}
+                      onBlur={onBlur}
+                      aria-invalid={Boolean(err('phone'))}
+                      aria-describedby={describe('phone')}
+                      required
+                    />
+                    {err('phone') && (
+                      <p className="field-error" id="error-phone">
+                        {err('phone')}
+                      </p>
+                    )}
+                  </div>
+                  <div className="field">
                     <label htmlFor="field-email">Email</label>
                     <input
                       id="field-email"
@@ -150,62 +169,14 @@ export default function Contact() {
                       </p>
                     )}
                   </div>
-                  <div className="field">
-                    <label htmlFor="field-phone">
-                      Phone <span className="optional">(optional)</span>
-                    </label>
-                    <input
-                      id="field-phone"
-                      name="phone"
-                      type="tel"
-                      autoComplete="tel"
-                      value={data.phone}
-                      onChange={onChange}
-                      onBlur={onBlur}
-                      aria-invalid={Boolean(err('phone'))}
-                      aria-describedby={describe('phone')}
-                    />
-                    {err('phone') && (
-                      <p className="field-error" id="error-phone">
-                        {err('phone')}
-                      </p>
-                    )}
-                  </div>
                 </div>
 
                 <div className="field">
-                  <label htmlFor="field-service">Service</label>
-                  <select
-                    id="field-service"
-                    name="service"
-                    value={data.service}
-                    onChange={onChange}
-                    onBlur={onBlur}
-                    aria-invalid={Boolean(err('service'))}
-                    aria-describedby={describe('service')}
-                    required
-                  >
-                    <option value="">Select a service…</option>
-                    {services.map((s) => (
-                      <option key={s.slug} value={s.title}>
-                        {s.title}
-                      </option>
-                    ))}
-                    <option value={OTHER}>{OTHER}</option>
-                  </select>
-                  {err('service') && (
-                    <p className="field-error" id="error-service">
-                      {err('service')}
-                    </p>
-                  )}
-                </div>
-
-                <div className="field">
-                  <label htmlFor="field-message">Project description</label>
+                  <label htmlFor="field-message">Project detail / message</label>
                   <textarea
                     id="field-message"
                     name="message"
-                    rows={6}
+                    rows={5}
                     value={data.message}
                     onChange={onChange}
                     onBlur={onBlur}
@@ -260,7 +231,7 @@ export default function Contact() {
                   <Phone size={20} aria-hidden="true" />
                   <div>
                     <small>Phone</small>
-                    <a href={`tel:${company.phone.replace(/\s/g, '')}`}>{company.phone}</a>
+                    <a href={`tel:${company.phone.replace(/[^\d+]/g, '')}`}>{company.phone}</a>
                   </div>
                 </li>
               )}

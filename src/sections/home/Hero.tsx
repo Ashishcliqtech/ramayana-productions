@@ -3,7 +3,6 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import { ChevronDown } from 'lucide-react'
 import CinematicImage from '../../components/CinematicImage'
 import Button from '../../components/Button'
-import { Monogram } from '../../components/Logo'
 import { WordReveal } from '../../components/Reveal'
 import { company } from '../../data/company'
 
@@ -22,13 +21,23 @@ export default function Hero() {
   return (
     <section className="hero" ref={ref} aria-label="Introduction">
       <motion.div className="hero-bg" style={reduce ? undefined : { y }}>
-        {heroVideo ? (
-          <video className="hero-video" autoPlay muted loop playsInline preload="metadata">
-            <source src={heroVideo} />
+        {heroVideo && !reduce ? (
+          <video
+            className="hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/e.jpeg"
+            aria-hidden="true"
+          >
+            <source src={heroVideo} type="video/mp4" />
           </video>
         ) : (
           <CinematicImage
-            alt="Cinematic backdrop with beams of warm light over a darkened horizon"
+            src="/images/e.jpeg"
+            alt="A film crane silhouetted against the setting sun"
             motif="hero"
             palette={['#0B0B0B', '#241b0f', '#C6A36B']}
             eager
@@ -36,7 +45,6 @@ export default function Hero() {
         )}
       </motion.div>
       <div className="hero-shade" aria-hidden="true" />
-      <div className="letterbox letterbox-top" aria-hidden="true" />
       <div className="letterbox letterbox-bottom" aria-hidden="true" />
 
       <motion.div className="container hero-content" style={reduce ? undefined : { opacity: fade }}>
@@ -46,7 +54,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          <Monogram size={64} />
+          <img className="hero-square-logo" src="/images/logo.jpeg" alt="Ramayana Productions" />
           <span>{company.positioning}</span>
         </motion.div>
 
@@ -67,7 +75,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
-          <Button to="/work">Explore Our Work</Button>
+          <Button to="/services">Explore Our Services</Button>
           <Button to="/contact" variant="ghost">
             Start a Project
           </Button>

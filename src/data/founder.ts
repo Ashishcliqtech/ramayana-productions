@@ -1,7 +1,7 @@
 /**
  * Founder details — EDIT THIS FILE.
- * Only the philosophy below comes from the supplied Founder's Vision document.
- * The name, designation and photograph are intentionally left as placeholders.
+ * The philosophy below comes from the supplied Founder's Vision document.
+ * The name and designation remain placeholders until approved details are available.
  */
 export const founder = {
   /** PLACEHOLDER — replace with the founder's approved name */
@@ -9,10 +9,9 @@ export const founder = {
   /** PLACEHOLDER — replace with the founder's approved designation */
   designation: '[Founder & Creative Director]',
   /**
-   * Photograph: copy the portrait to /public/images/founder.jpg and set photo to '/images/founder.jpg'.
-   * While empty, an elegant placeholder frame is displayed.
+   * Founder portrait supplied for the website.
    */
-  photo: '' as string,
+  photo: '/images/founder.jpeg',
   photoAlt: 'Portrait of the founder of Ramayana Productions',
 
   heading: "Founder's Vision: Redefining the Art of Storytelling",

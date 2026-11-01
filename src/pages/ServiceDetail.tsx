@@ -3,14 +3,12 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import PageHero from '../components/PageHero'
 import SectionHeading from '../components/SectionHeading'
 import CinematicImage from '../components/CinematicImage'
-import ProjectCard from '../components/ProjectCard'
 import ServiceCard from '../components/ServiceCard'
 import CTASection from '../components/CTASection'
 import Button from '../components/Button'
 import { ImageReveal, Reveal } from '../components/Reveal'
 import { useSEO } from '../hooks/useSEO'
 import { getService, services } from '../data/services'
-import { projects } from '../data/projects'
 import NotFound from './NotFound'
 
 export default function ServiceDetail() {
@@ -29,7 +27,6 @@ export default function ServiceDetail() {
   const index = services.findIndex((s) => s.slug === service.slug)
   const prev = services[(index - 1 + services.length) % services.length]
   const next = services[(index + 1) % services.length]
-  const related = projects.filter((p) => service.relatedCategories.includes(p.category)).slice(0, 3)
   const others = services.filter((s) => s.slug !== service.slug).slice(0, 3)
 
   return (
@@ -126,19 +123,6 @@ export default function ServiceDetail() {
           </ol>
         </div>
       </section>
-
-      {related.length > 0 && (
-        <section className="section section-alt">
-          <div className="container">
-            <SectionHeading eyebrow="Related Work" title={`${service.title} in our portfolio.`} />
-            <div className="project-grid">
-              {related.map((p) => (
-                <ProjectCard key={p.slug} project={p} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       <section className="section">
         <div className="container">

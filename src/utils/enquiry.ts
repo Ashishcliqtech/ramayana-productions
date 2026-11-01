@@ -17,8 +17,7 @@ export function validateEnquiry(data: EnquiryData): EnquiryErrors {
   const errors: EnquiryErrors = {}
   if (data.name.trim().length < 2) errors.name = 'Please enter your name.'
   if (!EMAIL_RE.test(data.email.trim())) errors.email = 'Please enter a valid email address.'
-  if (data.phone.trim() && !PHONE_RE.test(data.phone.trim())) errors.phone = 'Please enter a valid phone number.'
-  if (!data.service) errors.service = 'Please choose a service.'
+  if (!data.phone.trim() || !PHONE_RE.test(data.phone.trim())) errors.phone = 'Please enter a valid phone number.'
   if (data.message.trim().length < 20) errors.message = 'Please describe your project in at least 20 characters.'
   return errors
 }
@@ -39,9 +38,9 @@ export async function submitEnquiry(data: EnquiryData): Promise<SubmitResult> {
   const endpoint = import.meta.env.VITE_ENQUIRY_ENDPOINT?.trim()
 
   if (!endpoint) {
-    const subject = encodeURIComponent(`Project enquiry — ${data.service}`)
+    const subject = encodeURIComponent(`Project enquiry${data.service ? ` — ${data.service}` : ''}`)
     const body = encodeURIComponent(
-      `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || '—'}\nService: ${data.service}\n\nProject description:\n${data.message}`,
+      `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}${data.service ? `\nService: ${data.service}` : ''}\n\nProject description:\n${data.message}`,
     )
     window.location.href = `mailto:${company.email}?subject=${subject}&body=${body}`
     return { status: 'mailto' }

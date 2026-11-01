@@ -222,6 +222,15 @@ button {
   margin-bottom: 0;
 }
 
+@media (max-width: 699px) {
+  .section-heading {
+    margin-bottom: 26px;
+  }
+  .eyebrow {
+    margin-bottom: 16px;
+  }
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -241,24 +250,6 @@ button {
 .text-link-lg {
   font-size: 0.85rem;
   margin-top: 28px;
-}
-
-.chip {
-  display: inline-block;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: var(--gold);
-  color: var(--black);
-  font-family: var(--font-ui);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-.chip-outline {
-  background: rgba(11, 11, 11, 0.6);
-  color: var(--gold);
-  border: 1px solid var(--gold);
 }
 
 .divider {
@@ -284,27 +275,6 @@ button {
   margin-top: clamp(36px, 5vw, 60px);
   display: flex;
   justify-content: center;
-}
-
-.notice {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 18px 22px;
-  border: 1px solid var(--line);
-  background: rgba(198, 163, 107, 0.06);
-  border-radius: var(--radius);
-  color: var(--grey);
-  font-size: 0.95rem;
-  margin-bottom: 36px;
-}
-.notice svg {
-  flex: none;
-  color: var(--gold);
-  margin-top: 3px;
-}
-.notice strong {
-  color: var(--ivory);
 }
 
 /* Media ----------------------------------------------------------------- */

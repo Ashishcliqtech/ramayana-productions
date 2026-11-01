@@ -45,14 +45,6 @@ export default function Terms() {
           ),
         },
         {
-          title: 'Illustrative content',
-          body: (
-            <p>
-              Where this website shows projects marked “Illustrative concept”, they are examples that demonstrate presentation and visual style. They are not completed {company.name} productions.
-            </p>
-          ),
-        },
-        {
           title: 'Acceptable use',
           body: (
             <p>

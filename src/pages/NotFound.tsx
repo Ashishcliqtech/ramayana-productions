@@ -33,8 +33,8 @@ export default function NotFound() {
         <p className="lede lede-center">The page you’re looking for may have moved, or never made the final cut.</p>
         <div className="cta-actions">
           <Button to="/">Back to Home</Button>
-          <Button to="/work" variant="ghost">
-            Explore Our Work
+          <Button to="/services" variant="ghost">
+            Explore Our Services
           </Button>
         </div>
       </div>

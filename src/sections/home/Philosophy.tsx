@@ -13,7 +13,8 @@ export default function Philosophy() {
       <div className="container philosophy-grid">
         <ImageReveal className="philosophy-image">
           <CinematicImage
-            alt="A lone cinematic frame lit by warm, low light"
+            src="/images/g.jpeg"
+            alt="A film crew setting up a camera on location"
             motif="documentary"
             palette={['#11161a', '#26323a', '#C6A36B']}
             variant={1}
