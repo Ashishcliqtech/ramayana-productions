@@ -47,11 +47,23 @@
   border-bottom-color: var(--line);
 }
 .navbar-inner {
+  min-width: 0;
   height: var(--nav-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+}
+.navbar-inner > .logo {
+  min-width: 0;
+  max-width: calc(100% - 72px);
+}
+.logo-text {
+  min-width: 0;
+}
+.logo-top,
+.logo-bottom {
+  white-space: nowrap;
 }
 .nav-desktop {
   display: none;
@@ -121,8 +133,9 @@
   inset: 0;
   z-index: 1;
   background: var(--black);
-  padding: calc(var(--nav-height) + 24px) var(--gutter) 40px;
+  padding: calc(var(--nav-height) + 24px) var(--gutter) max(40px, env(safe-area-inset-bottom));
   overflow-y: auto;
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
   justify-content: center;
