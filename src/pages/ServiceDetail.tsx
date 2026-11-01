@@ -32,6 +32,7 @@ export default function ServiceDetail() {
   return (
     <>
       <PageHero
+        className="service-detail-hero"
         eyebrow={`Service ${service.number}`}
         title={service.title}
         text={service.tagline}
@@ -48,7 +49,7 @@ export default function ServiceDetail() {
         </div>
       </PageHero>
 
-      <section className="section">
+      <section className="section service-detail-section">
         <div className="container two-col">
           <SectionHeading eyebrow="Introduction" title={service.tagline} />
           <Reveal delay={0.1}>
@@ -57,7 +58,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section section-alt service-detail-section">
         <div className="container">
           <SectionHeading eyebrow="Creative Approach" title="How we approach it." />
           <ol className="approach-list approach-list-3">
@@ -73,7 +74,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section service-detail-section">
         <div className="container two-col">
           <SectionHeading eyebrow="Production Capabilities" title="What we bring to the work." />
           <ul className="capability-list">
@@ -89,7 +90,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      <section className="section section-alt">
+      <section className="section section-alt service-detail-section">
         <div className="container">
           <SectionHeading eyebrow="Visual Examples" title="The look and feel." text="Illustrative frames showing the visual language of this service." />
           <div className="frame-grid">
@@ -107,7 +108,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section service-detail-section">
         <div className="container">
           <SectionHeading eyebrow="Workflow" title="From idea to delivery." />
           <ol className="workflow">
@@ -124,7 +125,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section service-detail-section">
         <div className="container">
           <SectionHeading eyebrow="More Services" title="Explore further." />
           <div className="service-card-grid">

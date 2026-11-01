@@ -264,6 +264,17 @@
   }
 }
 
+@media (min-width: 700px) and (max-width: 899px) {
+  .philosophy-grid,
+  .about-philosophy-grid {
+    gap: 28px;
+  }
+  .philosophy-image,
+  .about-philosophy-media {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 /* ABOUT — Production photography ------------------------------------------ */
 .about-production-gallery {
   background: linear-gradient(180deg, var(--black), #11100e);
@@ -575,8 +586,22 @@
   text-align: center;
 }
 @media (max-width: 699px) {
+  .about-page-hero {
+    min-height: clamp(400px, 58svh, 500px);
+    padding-bottom: 32px;
+  }
+  .service-detail-hero {
+    min-height: clamp(400px, 58svh, 500px);
+    padding-bottom: 32px;
+  }
   .intro-grid {
     gap: 26px;
+  }
+  .philosophy-grid {
+    gap: 24px;
+  }
+  .philosophy-image {
+    aspect-ratio: 16 / 10;
   }
   .about-philosophy-grid {
     gap: 26px;
@@ -639,10 +664,15 @@
     margin-block: 7px 5px;
   }
   .about-production-grid {
-    gap: 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
   .about-production-image {
     min-height: 0;
+    aspect-ratio: 1 / 1;
+  }
+  .about-production-image-wide {
+    grid-column: 1 / -1;
     aspect-ratio: 16 / 10;
   }
   .about-production-image figcaption {
@@ -1140,6 +1170,9 @@
 }
 
 /* SERVICE DETAIL ------------------------------------------------------------- */
+.service-detail-section {
+  scroll-margin-top: var(--nav-height);
+}
 .capability-list {
   display: grid;
   gap: 0;
@@ -1277,6 +1310,34 @@
 .prev-next .is-next {
   text-align: right;
   margin-left: auto;
+}
+
+@media (max-width: 699px) {
+  .service-detail-section {
+    padding-block: 34px;
+  }
+  .service-detail-section .capability-item {
+    padding-block: 14px;
+  }
+  .service-detail-section .frame-grid {
+    gap: 12px;
+  }
+  .service-detail-section .workflow-step {
+    padding-block: 18px;
+  }
+  .service-detail-section .workflow-step::before {
+    top: 26px;
+  }
+  .service-detail-section .service-card-grid {
+    gap: 14px;
+  }
+  .service-detail-section .service-card-image {
+    aspect-ratio: 16 / 9;
+  }
+  .service-detail-section .service-card-body {
+    padding: 18px;
+    gap: 8px;
+  }
 }
 
 /* CAPABILITIES ---------------------------------------------------------------------- */

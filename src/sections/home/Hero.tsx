@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
 import CinematicImage from '../../components/CinematicImage'
 import Button from '../../components/Button'
 import { WordReveal } from '../../components/Reveal'
@@ -13,10 +12,6 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '22%'])
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0])
   const heroVideo: string = company.heroVideoUrl
-
-  const scrollNext = () => {
-    document.getElementById('intro')?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' })
-  }
 
   return (
     <section className="hero" ref={ref} aria-label="Introduction">
@@ -82,11 +77,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      <button type="button" className="scroll-indicator" onClick={scrollNext} aria-label="Scroll to introduction">
-        <span>Scroll</span>
-        <ChevronDown size={18} aria-hidden="true" />
-        <i aria-hidden="true" />
-      </button>
     </section>
   )
 }

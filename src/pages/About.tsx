@@ -30,6 +30,7 @@ export default function About() {
   return (
     <>
       <PageHero
+        className="about-page-hero"
         eyebrow="About Us"
         title="A house built on storytelling."
         text="Ramayana Productions is a forward-thinking film production house driven by a passion for storytelling."
