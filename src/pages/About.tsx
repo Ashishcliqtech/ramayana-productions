@@ -81,7 +81,7 @@ export default function About() {
           <div className="about-production-grid">
             <figure className="about-production-image about-production-image-wide">
               <CinematicImage
-                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85"
+                src="/images/a.jpeg"
                 alt="A clapperboard marks the start of a film scene"
                 motif="film"
                 palette={['#0f0f12', '#262228', '#C6A36B']}
@@ -99,7 +99,7 @@ export default function About() {
             </figure>
             <figure className="about-production-image">
               <CinematicImage
-                src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1200&q=85"
+                src="/images/e.jpeg"
                 alt="A film projector casting light into a dark room"
                 motif="film"
                 palette={['#0f0f12', '#262228', '#C6A36B']}

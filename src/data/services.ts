@@ -36,7 +36,7 @@ export const services: Service[] = [
     ]),
     motif: 'series',
     palette: ['#1b1712', '#3a2c18', '#C6A36B'],
-    image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/b.jpeg',
     layout: 'split-left',
   },
   {
@@ -71,7 +71,7 @@ export const services: Service[] = [
     ]),
     motif: 'commercial',
     palette: ['#14161a', '#2a2e36', '#d8c08f'],
-    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/e.jpeg',
     layout: 'full-bleed',
   },
   {
@@ -176,7 +176,7 @@ export const services: Service[] = [
     ]),
     motif: 'documentary',
     palette: ['#11161a', '#26323a', '#C6A36B'],
-    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/g.jpeg',
     layout: 'offset',
   },
   {
@@ -211,7 +211,7 @@ export const services: Service[] = [
     ]),
     motif: 'film',
     palette: ['#0f0f12', '#262228', '#C6A36B'],
-    image: 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1400&q=85',
+    image: '/images/a.jpeg',
     layout: 'wide',
   },
 ]

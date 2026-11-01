@@ -42,7 +42,7 @@ The site is a single-page app using client-side routing, so the host must serve 
 | Host | What to do |
 | --- | --- |
 | **Netlify** | Build command `npm run build`, publish directory `dist`. `public/_redirects` is already included. |
-| **Vercel** | Framework preset *Vite*. `vercel.json` (SPA rewrite) is already included. |
+| **Vercel** | Framework preset *Vite*, build command `npm run build`, output directory `dist`. The root `vercel.json` contains the SPA rewrite. |
 | **Cloudflare Pages** | Build `npm run build`, output `dist`. `_redirects` is honoured. |
 | **Any static host / cPanel** | Upload the contents of `dist/`. Add a rewrite of all paths to `/index.html` (Apache: `FallbackResource /index.html`, nginx: `try_files $uri /index.html;`). |
 

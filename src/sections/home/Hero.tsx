@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import CinematicImage from '../../components/CinematicImage'
 import Button from '../../components/Button'
@@ -7,6 +7,7 @@ import { company } from '../../data/company'
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null)
+  const [videoReady, setVideoReady] = useState(false)
   const reduce = useReducedMotion()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '22%'])
@@ -16,9 +17,16 @@ export default function Hero() {
   return (
     <section className="hero" ref={ref} aria-label="Introduction">
       <motion.div className="hero-bg" style={reduce ? undefined : { y }}>
-        {heroVideo && !reduce ? (
+        <CinematicImage
+          src="/images/e.jpeg"
+          alt="A film crane silhouetted against the setting sun"
+          motif="hero"
+          palette={['#0B0B0B', '#241b0f', '#C6A36B']}
+          eager
+        />
+        {heroVideo && !reduce && (
           <video
-            className="hero-video"
+            className={`hero-video${videoReady ? ' is-ready' : ''}`}
             autoPlay
             muted
             loop
@@ -26,17 +34,11 @@ export default function Hero() {
             preload="metadata"
             poster="/images/e.jpeg"
             aria-hidden="true"
+            onCanPlay={() => setVideoReady(true)}
+            onError={() => setVideoReady(false)}
           >
             <source src={heroVideo} type="video/mp4" />
           </video>
-        ) : (
-          <CinematicImage
-            src="/images/e.jpeg"
-            alt="A film crane silhouetted against the setting sun"
-            motif="hero"
-            palette={['#0B0B0B', '#241b0f', '#C6A36B']}
-            eager
-          />
         )}
       </motion.div>
       <div className="hero-shade" aria-hidden="true" />
