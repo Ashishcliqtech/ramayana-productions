@@ -1,0 +1,43 @@
+:root {
+  /* Brand palette */
+  --black: #0b0b0b;
+  --charcoal: #171717;
+  --ivory: #f3f0e9;
+  --gold: #c6a36b;
+  --bronze: #967447;
+  --grey: #a8a49c;
+
+  --surface: #121212;
+  --line: rgba(198, 163, 107, 0.22);
+  --line-soft: rgba(243, 240, 233, 0.1);
+
+  /* Typography */
+  --font-display: 'Playfair Display', 'Times New Roman', serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Layout */
+  --gutter: clamp(20px, 5vw, 56px);
+  --container: 1280px;
+  --section-space: clamp(72px, 11vw, 150px);
+  --nav-height: 84px;
+  --radius: 4px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 1099px) {
+  :root {
+    --nav-height: 72px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: 112.5%;
+  }
+  :root {
+    --container: 1440px;
+  }
+}
