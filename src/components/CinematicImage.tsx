@@ -1,5 +1,6 @@
 import { useId, useState } from 'react'
 import type { Motif, Palette } from '../types'
+import { retryImageUrl } from '../utils/media'
 
 interface Props {
   /** Real photograph. If missing or fails to load, a generated cinematic scene is shown instead. */
@@ -183,13 +184,24 @@ function Scene({ motif, palette, variant, uid }: { motif: Motif; palette: Palett
 }
 
 export default function CinematicImage({ src, alt, motif, palette, className = '', eager = false, variant = 0 }: Props) {
-  const [failed, setFailed] = useState(false)
+  const [retriedSrc, setRetriedSrc] = useState<string>()
+  const [failedSrc, setFailedSrc] = useState<string>()
   const uid = useId().replace(/[^a-zA-Z0-9]/g, '')
+  const hasFailed = Boolean(src) && failedSrc === src
 
-  if (src && !failed) {
+  if (src && !hasFailed) {
     return (
       <div className={`cine ${className}`}>
-        <img src={src} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" onError={() => setFailed(true)} />
+        <img
+          src={retriedSrc === src ? retryImageUrl(src) : src}
+          alt={alt}
+          loading={eager ? 'eager' : 'lazy'}
+          decoding="async"
+          onError={() => {
+            if (retriedSrc !== src) setRetriedSrc(src)
+            else setFailedSrc(src)
+          }}
+        />
       </div>
     )
   }

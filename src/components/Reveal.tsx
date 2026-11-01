@@ -59,14 +59,14 @@ export function WordReveal({ text, className, delay = 0, as = 'h2', immediate = 
   )
 }
 
-/** Image reveal: a mask wipes away to uncover the picture. */
+/** Subtle image reveal that leaves media visible if scroll animation is unavailable. */
 export function ImageReveal({ children, className }: { children: ReactNode; className?: string }) {
   const reduce = useReducedMotion()
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { clipPath: 'inset(0 0 100% 0)', scale: 1.06 }}
-      whileInView={{ clipPath: 'inset(0 0 0% 0)', scale: 1 }}
+      initial={reduce ? false : { scale: 1.04 }}
+      whileInView={{ scale: 1 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 1.2, ease }}
     >

@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { company } from '../data/company'
+import { retryImageUrl } from '../utils/media'
 
 export function Monogram({ size = 44 }: { size?: number }) {
   return (
@@ -14,9 +16,25 @@ export function Monogram({ size = 44 }: { size?: number }) {
 }
 
 export default function Logo({ onClick }: { onClick?: () => void }) {
+  const [retried, setRetried] = useState(false)
+  const [failed, setFailed] = useState(false)
+  const logo = '/images/logorec.jpeg'
+
   return (
     <Link to="/" className="logo" aria-label={`${company.name} — Home`} onClick={onClick}>
-      <img className="logo-image" src="/images/logorec.jpeg" alt="" />
+      {failed ? (
+        <Monogram size={44} />
+      ) : (
+        <img
+          className="logo-image"
+          src={retried ? retryImageUrl(logo) : logo}
+          alt=""
+          onError={() => {
+            if (!retried) setRetried(true)
+            else setFailed(true)
+          }}
+        />
+      )}
     </Link>
   )
 }

@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { founder } from '../data/founder'
+import { retryImageUrl } from '../utils/media'
 import { Monogram } from './Logo'
 
 /** Displays the supplied founder photograph with a branded fallback. */
 export default function FounderPortrait({ className = '' }: { className?: string }) {
+  const [retried, setRetried] = useState(false)
   const [failed, setFailed] = useState(false)
   const hasPhoto = Boolean(founder.photo) && !failed
   const hasApprovedIdentity = !founder.name.startsWith('[') && !founder.designation.startsWith('[')
@@ -14,7 +16,16 @@ export default function FounderPortrait({ className = '' }: { className?: string
         <span className="portrait-corner tl" aria-hidden="true" />
         <span className="portrait-corner br" aria-hidden="true" />
         {hasPhoto ? (
-          <img src={founder.photo} alt={founder.photoAlt} loading="lazy" decoding="async" onError={() => setFailed(true)} />
+          <img
+            src={retried ? retryImageUrl(founder.photo) : founder.photo}
+            alt={founder.photoAlt}
+            loading="lazy"
+            decoding="async"
+            onError={() => {
+              if (!retried) setRetried(true)
+              else setFailed(true)
+            }}
+          />
         ) : (
           <div className="portrait-placeholder" role="img" aria-label="Founder photograph placeholder">
             <Monogram size={96} />

@@ -1,13 +1,17 @@
 import { useRef, useState } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import CinematicImage from '../../components/CinematicImage'
+import { Monogram } from '../../components/Logo'
 import Button from '../../components/Button'
 import { WordReveal } from '../../components/Reveal'
 import { company } from '../../data/company'
+import { retryImageUrl } from '../../utils/media'
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null)
   const [videoReady, setVideoReady] = useState(false)
+  const [logoRetried, setLogoRetried] = useState(false)
+  const [logoFailed, setLogoFailed] = useState(false)
   const reduce = useReducedMotion()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '22%'])
@@ -51,7 +55,21 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
         >
-          <img className="hero-square-logo" src="/images/logo.jpeg" alt="Ramayana Productions" />
+          {logoFailed ? (
+            <span className="hero-square-logo hero-square-logo-fallback" aria-hidden="true">
+              <Monogram size={52} />
+            </span>
+          ) : (
+            <img
+              className="hero-square-logo"
+              src={logoRetried ? retryImageUrl('/images/logo.jpeg') : '/images/logo.jpeg'}
+              alt="Ramayana Productions"
+              onError={() => {
+                if (!logoRetried) setLogoRetried(true)
+                else setLogoFailed(true)
+              }}
+            />
+          )}
           <span>{company.positioning}</span>
         </motion.div>
 
