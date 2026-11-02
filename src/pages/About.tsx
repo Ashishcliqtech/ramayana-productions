@@ -53,7 +53,7 @@ export default function About() {
         <div className="container split about-philosophy-grid">
           <ImageReveal className="split-media about-philosophy-media">
             <CinematicImage
-              src="/images/b.jpeg"
+              src="/images/m.jpeg"
               alt="A camera operator filming a scene on location"
               motif="studio"
               palette={['#16120d', '#2c2418', '#C6A36B']}

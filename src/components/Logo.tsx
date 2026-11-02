@@ -18,12 +18,14 @@ export function Monogram({ size = 44 }: { size?: number }) {
 export default function Logo({ onClick }: { onClick?: () => void }) {
   const [retried, setRetried] = useState(false)
   const [failed, setFailed] = useState(false)
-  const logo = '/images/logorec.jpeg'
+  const logo = '/images/logo.jpeg'
 
   return (
     <Link to="/" className="logo" aria-label={`${company.name} — Home`} onClick={onClick}>
       {failed ? (
-        <Monogram size={44} />
+        <span className="logo-mark">
+          <Monogram size={44} />
+        </span>
       ) : (
         <img
           className="logo-image"
@@ -35,6 +37,10 @@ export default function Logo({ onClick }: { onClick?: () => void }) {
           }}
         />
       )}
+      <span className="logo-copy">
+        <span className="logo-name">{company.wordmarkTop}</span>
+        <span className="logo-subtitle">{company.wordmarkBottom}</span>
+      </span>
     </Link>
   )
 }

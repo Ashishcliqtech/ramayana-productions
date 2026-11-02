@@ -22,7 +22,7 @@ export default function Hero() {
     <section className="hero" ref={ref} aria-label="Introduction">
       <motion.div className="hero-bg" style={reduce ? undefined : { y }}>
         <CinematicImage
-          src="/images/e.jpeg"
+          src="/images/i.jpeg"
           alt="A film crane silhouetted against the setting sun"
           motif="hero"
           palette={['#0B0B0B', '#241b0f', '#C6A36B']}
@@ -36,7 +36,7 @@ export default function Hero() {
             loop
             playsInline
             preload="metadata"
-            poster="/images/e.jpeg"
+            poster="/images/i.jpeg"
             aria-hidden="true"
             onCanPlay={() => setVideoReady(true)}
             onError={() => setVideoReady(false)}
@@ -70,7 +70,7 @@ export default function Hero() {
               }}
             />
           )}
-          <span>{company.positioning}</span>
+          <span className="hero-positioning">{company.positioning}</span>
         </motion.div>
 
         <WordReveal as="h1" text="Stories That Stay With You." className="hero-title" delay={0.25} immediate />

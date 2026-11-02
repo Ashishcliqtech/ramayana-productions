@@ -25,7 +25,7 @@ export default function Services() {
         text="End-to-end production capabilities that bring your vision to life with precision, creativity and unmatched quality."
         motif="series"
         palette={['#1b1712', '#3a2c18', '#C6A36B']}
-        image="/images/g.jpeg"
+        image="/images/q.jpeg"
         imageAlt="A film crew preparing a camera setup on location"
       />
 

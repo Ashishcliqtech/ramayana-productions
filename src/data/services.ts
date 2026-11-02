@@ -36,7 +36,7 @@ export const services: Service[] = [
     ]),
     motif: 'series',
     palette: ['#1b1712', '#3a2c18', '#C6A36B'],
-    image: '/images/b.jpeg',
+    image: '/images/m.jpeg',
     layout: 'split-left',
   },
   {
@@ -211,7 +211,7 @@ export const services: Service[] = [
     ]),
     motif: 'film',
     palette: ['#0f0f12', '#262228', '#C6A36B'],
-    image: '/images/a.jpeg',
+    image: '/images/p.jpeg',
     layout: 'wide',
   },
 ]

@@ -14,7 +14,7 @@ export default function CapabilitiesStrip() {
   return (
     <section className="capabilities-strip" aria-label="Production capabilities">
       <div className="capabilities-strip-bg" aria-hidden="true">
-        <CinematicImage src="/images/e.jpeg" alt="" motif="film" palette={['#0f0f12', '#262228', '#C6A36B']} variant={2} />
+        <CinematicImage src="/images/n.jpeg" alt="" motif="film" palette={['#0f0f12', '#262228', '#C6A36B']} variant={2} />
       </div>
       <div className="capabilities-strip-shade" aria-hidden="true" />
       <div className="container capabilities-strip-inner">
