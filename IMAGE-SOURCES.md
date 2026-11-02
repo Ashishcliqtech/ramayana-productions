@@ -53,5 +53,5 @@ Each filename corresponds to the photo ID in its source URL:
 
 | File | Source | License |
 | --- | --- | --- |
-| `public/images/hero-production.mp4` | [Behind the scenes of a man doing a commercial (Mixkit #44062)](https://mixkit.co/free-stock-video/behind-the-scenes-of-a-man-doing-a-commercial-44062/) — 720p download | [Mixkit Stock Video Free License](https://mixkit.co/license/#videoFree), commercial and personal use |
-| `public/images/hero-production-poster.jpg` | Matching preview image from the same Mixkit clip | Same license |
+| `public/images/hero-film-production.mp4` | [Cinematic film crew setting up equipment (Pexels #34677880)](https://www.pexels.com/video/cinematic-film-crew-setting-up-equipment-34677880/) — 1080p download | [Pexels License](https://www.pexels.com/license/), commercial and personal use |
+| `public/images/hero-film-production-poster.jpg` | Matching preview image from the same Pexels clip | Same license |

@@ -60,7 +60,7 @@ export const company: Company = {
   },
 
   /** Hero background video; the cinematic still is used when motion is reduced. */
-  heroVideoUrl: '/images/hero-production.mp4',
+  heroVideoUrl: '/images/hero-film-production.mp4',
 
   legal: {
     legalName: '[Registered legal name of the company]',

@@ -17,14 +17,14 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '22%'])
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0])
   const heroVideo: string = company.heroVideoUrl
-  const heroPoster = '/images/hero-production-poster.jpg'
+  const heroPoster = '/images/hero-film-production-poster.jpg'
 
   return (
     <section className="hero" ref={ref} aria-label="Introduction">
       <motion.div className="hero-bg" style={reduce ? undefined : { y }}>
         <CinematicImage
           src={heroPoster}
-          alt="A behind-the-scenes camera shoot in a production studio"
+          alt="A cinematic film crew preparing a camera on set"
           motif="hero"
           palette={['#0B0B0B', '#241b0f', '#C6A36B']}
           eager
