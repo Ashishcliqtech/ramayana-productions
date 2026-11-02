@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Logo />
+          <Logo shape="circle" />
           <p className="footer-tagline">{company.tagline}</p>
           <p className="footer-note">{company.positioning}</p>
         </div>

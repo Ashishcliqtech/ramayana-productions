@@ -22,6 +22,10 @@
   object-fit: cover;
   box-shadow: 0 8px 26px rgba(0, 0, 0, 0.2);
 }
+.logo--circle .logo-image,
+.logo--circle .logo-mark {
+  border-radius: 50%;
+}
 .logo-mark {
   display: grid;
   width: 48px;

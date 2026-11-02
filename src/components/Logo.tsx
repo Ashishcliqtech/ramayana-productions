@@ -15,13 +15,13 @@ export function Monogram({ size = 44 }: { size?: number }) {
   )
 }
 
-export default function Logo({ onClick }: { onClick?: () => void }) {
+export default function Logo({ onClick, shape = 'square' }: { onClick?: () => void; shape?: 'square' | 'circle' }) {
   const [retried, setRetried] = useState(false)
   const [failed, setFailed] = useState(false)
   const logo = '/images/logo.jpeg'
 
   return (
-    <Link to="/" className="logo" aria-label={`${company.name} — Home`} onClick={onClick}>
+    <Link to="/" className={`logo ${shape === 'circle' ? 'logo--circle' : ''}`} aria-label={`${company.name} — Home`} onClick={onClick}>
       {failed ? (
         <span className="logo-mark">
           <Monogram size={44} />

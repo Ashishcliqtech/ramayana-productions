@@ -37,7 +37,7 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled || open ? 'is-solid' : ''} ${open ? 'menu-open' : ''}`}>
       <div className="container navbar-inner">
-        <Logo />
+        <Logo shape="circle" />
 
         <nav className="nav-desktop" aria-label="Primary">
           {navLinks.map((l) => (
