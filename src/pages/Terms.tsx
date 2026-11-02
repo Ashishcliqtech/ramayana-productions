@@ -19,6 +19,8 @@ export default function Terms() {
     <LegalLayout
       title="Terms & Conditions"
       intro={`The terms that apply when you use the ${company.name} website.`}
+      image="/images/stock-38.webp"
+      imageAlt="An empty cinema auditorium"
       sections={[
         {
           title: 'Acceptance of terms',

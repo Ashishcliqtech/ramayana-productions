@@ -100,7 +100,7 @@ export default function About() {
             <figure className="about-production-image">
               <CinematicImage
                 src="/images/e.jpeg"
-                alt="A film projector casting light into a dark room"
+                alt="A film crane silhouetted against the setting sun"
                 motif="film"
                 palette={['#0f0f12', '#262228', '#C6A36B']}
               />

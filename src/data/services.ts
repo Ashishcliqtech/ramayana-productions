@@ -36,7 +36,9 @@ export const services: Service[] = [
     ]),
     motif: 'series',
     palette: ['#1b1712', '#3a2c18', '#C6A36B'],
-    image: '/images/m.jpeg',
+    image: '/images/stock-01.webp',
+    showcaseImage: '/images/stock-07.webp',
+    detailImage: '/images/stock-16.webp',
     layout: 'split-left',
   },
   {
@@ -71,7 +73,9 @@ export const services: Service[] = [
     ]),
     motif: 'commercial',
     palette: ['#14161a', '#2a2e36', '#d8c08f'],
-    image: '/images/e.jpeg',
+    image: '/images/stock-02.webp',
+    showcaseImage: '/images/stock-08.webp',
+    detailImage: '/images/stock-13.webp',
     layout: 'full-bleed',
   },
   {
@@ -106,7 +110,9 @@ export const services: Service[] = [
     ]),
     motif: 'music',
     palette: ['#120f14', '#2d1f33', '#C6A36B'],
-    image: '/images/d.jpeg',
+    image: '/images/stock-03.webp',
+    showcaseImage: '/images/stock-09.webp',
+    detailImage: '/images/stock-14.webp',
     layout: 'split-right',
   },
   {
@@ -141,7 +147,9 @@ export const services: Service[] = [
     ]),
     motif: 'micro',
     palette: ['#15110f', '#33241a', '#e0c28f'],
-    image: '/images/h.jpeg',
+    image: '/images/stock-04.webp',
+    showcaseImage: '/images/stock-10.webp',
+    detailImage: '/images/stock-15.webp',
     layout: 'stacked',
   },
   {
@@ -176,7 +184,9 @@ export const services: Service[] = [
     ]),
     motif: 'documentary',
     palette: ['#11161a', '#26323a', '#C6A36B'],
-    image: '/images/g.jpeg',
+    image: '/images/stock-05.webp',
+    showcaseImage: '/images/stock-11.webp',
+    detailImage: '/images/stock-17.webp',
     layout: 'offset',
   },
   {
@@ -211,9 +221,44 @@ export const services: Service[] = [
     ]),
     motif: 'film',
     palette: ['#0f0f12', '#262228', '#C6A36B'],
-    image: '/images/p.jpeg',
+    image: '/images/stock-06.webp',
+    showcaseImage: '/images/stock-12.webp',
+    detailImage: '/images/stock-18.webp',
     layout: 'wide',
   },
 ]
+
+export const relatedServiceImages: Record<string, Record<string, string>> = {
+  'web-series': {
+    'ad-commercials': '/images/stock-19.webp',
+    'music-videos': '/images/stock-20.webp',
+    'micro-dramas': '/images/stock-21.webp',
+  },
+  'ad-commercials': {
+    'web-series': '/images/stock-22.webp',
+    'music-videos': '/images/stock-23.webp',
+    'micro-dramas': '/images/stock-24.webp',
+  },
+  'music-videos': {
+    'web-series': '/images/stock-25.webp',
+    'ad-commercials': '/images/stock-26.webp',
+    'micro-dramas': '/images/stock-27.webp',
+  },
+  'micro-dramas': {
+    'web-series': '/images/stock-28.webp',
+    'ad-commercials': '/images/stock-29.webp',
+    'music-videos': '/images/stock-30.webp',
+  },
+  documentaries: {
+    'web-series': '/images/stock-31.webp',
+    'ad-commercials': '/images/stock-32.webp',
+    'music-videos': '/images/stock-33.webp',
+  },
+  'feature-and-short-films': {
+    'web-series': '/images/stock-34.webp',
+    'ad-commercials': '/images/stock-35.webp',
+    'music-videos': '/images/stock-36.webp',
+  },
+}
 
 export const getService = (slug: string | undefined) => services.find((s) => s.slug === slug)

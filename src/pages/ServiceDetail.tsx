@@ -8,7 +8,7 @@ import CTASection from '../components/CTASection'
 import Button from '../components/Button'
 import { ImageReveal, Reveal } from '../components/Reveal'
 import { useSEO } from '../hooks/useSEO'
-import { getService, services } from '../data/services'
+import { getService, relatedServiceImages, services } from '../data/services'
 import NotFound from './NotFound'
 
 export default function ServiceDetail() {
@@ -38,7 +38,7 @@ export default function ServiceDetail() {
         text={service.tagline}
         motif={service.motif}
         palette={service.palette}
-        image={service.image}
+        image={service.detailImage}
         imageAlt={`${service.title} — cinematic hero visual`}
       >
         <div className="hero-inline-actions">
@@ -130,7 +130,7 @@ export default function ServiceDetail() {
           <SectionHeading eyebrow="More Services" title="Explore further." />
           <div className="service-card-grid">
             {others.map((s) => (
-              <ServiceCard key={s.slug} service={s} />
+              <ServiceCard key={s.slug} service={s} image={relatedServiceImages[service.slug][s.slug]} />
             ))}
           </div>
           <nav className="prev-next" aria-label="Service navigation">

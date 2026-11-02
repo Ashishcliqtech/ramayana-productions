@@ -3,11 +3,11 @@ import { ArrowUpRight } from 'lucide-react'
 import CinematicImage from './CinematicImage'
 import type { Service } from '../types'
 
-export default function ServiceCard({ service }: { service: Service }) {
+export default function ServiceCard({ service, image }: { service: Service; image: string }) {
   return (
     <Link to={`/services/${service.slug}`} className="service-card">
       <CinematicImage
-        src={service.image}
+        src={image}
         alt={`${service.title} — cinematic visual`}
         motif={service.motif}
         palette={service.palette}

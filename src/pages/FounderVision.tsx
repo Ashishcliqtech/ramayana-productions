@@ -21,7 +21,8 @@ export default function FounderVision() {
         title="Redefining the Art of Storytelling"
         motif="studio"
         palette={['#16120d', '#2c2418', '#C6A36B']}
-        imageAlt="Warm cinematic light in a dark studio"
+        image="/images/stock-37.webp"
+        imageAlt="Audio controls in a recording studio"
       />
 
       <section className="section vision-opening">

@@ -84,7 +84,7 @@ export default function Capabilities() {
             </ol>
           </div>
           <ImageReveal className="split-media">
-            <CinematicImage src="/images/a.jpeg" alt="A strip of film held up to warm studio lights" motif="film" palette={['#0f0f12', '#262228', '#C6A36B']} variant={1} />
+            <CinematicImage src="/images/g.jpeg" alt="A documentary film crew working on location" motif="film" palette={['#0f0f12', '#262228', '#C6A36B']} variant={1} />
           </ImageReveal>
         </div>
       </section>

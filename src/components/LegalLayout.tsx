@@ -8,10 +8,22 @@ export interface LegalSection {
   body: ReactNode
 }
 
-export default function LegalLayout({ title, intro, sections }: { title: string; intro: string; sections: LegalSection[] }) {
+export default function LegalLayout({
+  title,
+  intro,
+  sections,
+  image,
+  imageAlt,
+}: {
+  title: string
+  intro: string
+  sections: LegalSection[]
+  image: string
+  imageAlt: string
+}) {
   return (
     <>
-      <PageHero eyebrow="Legal" title={title} text={intro} />
+      <PageHero eyebrow="Legal" title={title} text={intro} image={image} imageAlt={imageAlt} />
       <section className="section legal">
         <div className="container legal-grid">
           <aside className="legal-toc" aria-label="On this page">

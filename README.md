@@ -74,6 +74,8 @@ The form validates name, email, optional phone, service and description (min. 20
 
 The home page production-process gallery and service pages use the photographs in `public/images/`. Replace or update the image paths in `src/sections/home/ProductionGallery.tsx` and `src/data/services.ts` as needed. Recommended: 1600px+ wide, JPG/WebP, compressed.
 
+The additional `stock-*.webp` photographs are downloaded from Unsplash and used in distinct page and service-card slots. Their source IDs and the Unsplash License link are recorded in [IMAGE-SOURCES.md](./IMAGE-SOURCES.md).
+
 ### Founder photograph
 
 Copy the approved portrait to `public/images/founder.jpg`, then in `src/data/founder.ts` set `photo: '/images/founder.jpg'`, `name` and `designation`.

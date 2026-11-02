@@ -79,7 +79,8 @@ export default function Contact() {
         text="Tell us about your idea. From short-form digital content to grand cinematic storytelling, we’d love to hear your story."
         motif="studio"
         palette={['#16120d', '#2c2418', '#C6A36B']}
-        imageAlt="Warm light in a dark studio"
+        image="/images/p.jpeg"
+        imageAlt="A camera operator filming on a city street"
       />
 
       <section className="section contact">

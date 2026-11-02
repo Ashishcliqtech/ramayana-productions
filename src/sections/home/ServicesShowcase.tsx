@@ -51,7 +51,7 @@ export default function ServicesShowcase() {
                 transition={{ duration: 0.5 }}
                 className="showcase-preview-inner"
               >
-                <CinematicImage src={current.image} alt="" motif={current.motif} palette={current.palette} />
+                <CinematicImage src={current.showcaseImage} alt="" motif={current.motif} palette={current.palette} />
                 <p>{current.summary}</p>
               </motion.div>
             </AnimatePresence>

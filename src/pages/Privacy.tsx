@@ -20,6 +20,8 @@ export default function Privacy() {
     <LegalLayout
       title="Privacy Policy"
       intro={`How ${company.name} handles the information you share with us through this website.`}
+      image="/images/stock-39.webp"
+      imageAlt="An open road winding through a desert landscape"
       sections={[
         {
           title: 'Who we are',

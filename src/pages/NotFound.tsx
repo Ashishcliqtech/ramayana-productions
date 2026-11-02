@@ -15,7 +15,7 @@ export default function NotFound() {
   return (
     <section className="not-found">
       <div className="page-hero-bg">
-        <CinematicImage alt="" motif="film" palette={['#0B0B0B', '#1d1710', '#C6A36B']} eager />
+        <CinematicImage src="/images/stock-40.webp" alt="" motif="film" palette={['#0B0B0B', '#1d1710', '#C6A36B']} eager />
       </div>
       <div className="page-hero-shade" />
       <div className="container not-found-content">

@@ -23,8 +23,10 @@ export interface Service {
   motif: Motif
   palette: Palette
   layout: ServiceLayout
-  /** Optional real photograph. Put the file in /public/images and set e.g. '/images/web-series.jpg' */
-  image?: string
+  /** Distinct photography for the service listing, homepage preview and detail-page hero. */
+  image: string
+  showcaseImage: string
+  detailImage: string
 }
 
 export interface Pillar {
