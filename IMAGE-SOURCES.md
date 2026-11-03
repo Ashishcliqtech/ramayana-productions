@@ -49,9 +49,9 @@ Each filename corresponds to the photo ID in its source URL:
 | `stock-39.webp` | `photo-1500530855697-b586d89ba3ee` |
 | `stock-40.webp` | `photo-1500534623283-312aade485b7` |
 
-## Homepage hero video
+## Homepage and service-detail video
 
 | File | Source | License |
 | --- | --- | --- |
-| `public/images/hero-film-production.mp4` | [Cinematic film crew setting up equipment (Pexels #34677880)](https://www.pexels.com/video/cinematic-film-crew-setting-up-equipment-34677880/) — 1080p download | [Pexels License](https://www.pexels.com/license/), commercial and personal use |
-| `public/images/hero-film-production-poster.jpg` | Matching preview image from the same Pexels clip | Same license |
+| `public/images/hero-film-production.mp4` | [Cinematic film crew setting up equipment (Pexels #34677880)](https://www.pexels.com/video/cinematic-film-crew-setting-up-equipment-34677880/) — 1080p download, used in the homepage hero and service-detail galleries | [Pexels License](https://www.pexels.com/license/), commercial and personal use |
+| `public/images/hero-film-production-poster.jpg` | Matching preview image from the same Pexels clip (homepage hero) | Same license |

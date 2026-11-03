@@ -28,6 +28,7 @@ export default function ServiceDetail() {
   const prev = services[(index - 1 + services.length) % services.length]
   const next = services[(index + 1) % services.length]
   const others = services.filter((s) => s.slug !== service.slug).slice(0, 3)
+  const visualImages = [service.image, service.showcaseImage]
 
   return (
     <>
@@ -92,16 +93,29 @@ export default function ServiceDetail() {
 
       <section className="section section-alt service-detail-section">
         <div className="container">
-          <SectionHeading eyebrow="Visual Examples" title="The look and feel." text="Illustrative frames showing the visual language of this service." />
+          <SectionHeading eyebrow="Visual Examples" title="The look and feel." text="Production photography and a behind-the-scenes film-set clip." />
           <div className="frame-grid">
             {[0, 1, 2].map((v) => (
               <ImageReveal key={v} className={`frame frame-${v + 1}`}>
-                <CinematicImage
-                  alt={`${service.title} — illustrative frame ${v + 1}`}
-                  motif={service.motif}
-                  palette={service.palette}
-                  variant={v}
-                />
+                {v < visualImages.length ? (
+                  <CinematicImage
+                    src={visualImages[v]}
+                    alt={`${service.title} — production still ${v + 1}`}
+                    motif={service.motif}
+                    palette={service.palette}
+                  />
+                ) : (
+                  <video
+                    className="service-video"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={service.detailImage}
+                    aria-label={`${service.title} behind-the-scenes production footage`}
+                  >
+                    <source src="/images/hero-film-production.mp4" type="video/mp4" />
+                  </video>
+                )}
               </ImageReveal>
             ))}
           </div>
