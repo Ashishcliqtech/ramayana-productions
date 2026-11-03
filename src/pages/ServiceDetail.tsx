@@ -93,7 +93,7 @@ export default function ServiceDetail() {
 
       <section className="section section-alt service-detail-section">
         <div className="container">
-          <SectionHeading eyebrow="Visual Examples" title="The look and feel." text="Production photography and a behind-the-scenes film-set clip." />
+          <SectionHeading eyebrow="Visual Examples" title="The look and feel." text="Production photography and a video selected for this service." />
           <div className="frame-grid">
             {[0, 1, 2].map((v) => (
               <ImageReveal key={v} className={`frame frame-${v + 1}`}>
@@ -110,10 +110,10 @@ export default function ServiceDetail() {
                     controls
                     playsInline
                     preload="metadata"
-                    poster={service.detailImage}
-                    aria-label={`${service.title} behind-the-scenes production footage`}
+                    poster={service.detailVideoPoster ?? service.detailImage}
+                    aria-label={`${service.title} production video`}
                   >
-                    <source src="/images/hero-film-production.mp4" type="video/mp4" />
+                    <source src={service.detailVideo} type="video/mp4" />
                   </video>
                 )}
               </ImageReveal>

@@ -49,9 +49,15 @@ Each filename corresponds to the photo ID in its source URL:
 | `stock-39.webp` | `photo-1500530855697-b586d89ba3ee` |
 | `stock-40.webp` | `photo-1500534623283-312aade485b7` |
 
-## Homepage and service-detail video
+## Homepage and service video
 
 | File | Source | License |
 | --- | --- | --- |
-| `public/images/hero-film-production.mp4` | [Cinematic film crew setting up equipment (Pexels #34677880)](https://www.pexels.com/video/cinematic-film-crew-setting-up-equipment-34677880/) — 1080p download, used in the homepage hero and service-detail galleries | [Pexels License](https://www.pexels.com/license/), commercial and personal use |
+| `public/images/hero-film-production.mp4` | [Cinematic film crew setting up equipment (Pexels #34677880)](https://www.pexels.com/video/cinematic-film-crew-setting-up-equipment-34677880/) — 1080p download, used in the homepage hero | [Pexels License](https://www.pexels.com/license/), commercial and personal use |
 | `public/images/hero-film-production-poster.jpg` | Matching preview image from the same Pexels clip (homepage hero) | Same license |
+| `public/images/service-documentaries.mp4` | [An Interview Being Recorded in Camera (Pexels #6883837)](https://www.pexels.com/video/an-interview-being-recorded-in-camera-6883837/) | [Pexels License](https://www.pexels.com/license/), commercial and personal use |
+| `public/images/service-documentaries-poster.jpg` | Preview image from the same Pexels clip | Same license |
+| `public/images/service-music-videos.mp4` | [People Performing (Pexels #2941112)](https://www.pexels.com/video/people-performing-2941112/) | [Pexels License](https://www.pexels.com/license/), commercial and personal use |
+| `public/images/service-music-videos-poster.jpg` | Preview image from the same Pexels clip | Same license |
+| `public/images/service-micro-dramas.mp4` | [Video of iPhone (Pexels #853987)](https://www.pexels.com/video/video-of-iphone-853987/) | [Pexels License](https://www.pexels.com/license/), commercial and personal use |
+| `public/images/service-micro-dramas-poster.jpg` | Preview image from the same Pexels clip | Same license |

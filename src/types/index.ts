@@ -27,6 +27,8 @@ export interface Service {
   image: string
   showcaseImage: string
   detailImage: string
+  detailVideo: string
+  detailVideoPoster?: string
 }
 
 export interface Pillar {

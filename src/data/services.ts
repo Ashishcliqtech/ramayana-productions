@@ -39,6 +39,7 @@ export const services: Service[] = [
     image: '/images/stock-01.webp',
     showcaseImage: '/images/stock-07.webp',
     detailImage: '/images/stock-16.webp',
+    detailVideo: '/images/ab.mp4',
     layout: 'split-left',
   },
   {
@@ -76,6 +77,7 @@ export const services: Service[] = [
     image: '/images/stock-02.webp',
     showcaseImage: '/images/stock-08.webp',
     detailImage: '/images/stock-13.webp',
+    detailVideo: '/images/ef.mp4',
     layout: 'full-bleed',
   },
   {
@@ -113,6 +115,8 @@ export const services: Service[] = [
     image: '/images/stock-03.webp',
     showcaseImage: '/images/stock-09.webp',
     detailImage: '/images/stock-14.webp',
+    detailVideo: '/images/service-music-videos.mp4',
+    detailVideoPoster: '/images/service-music-videos-poster.jpg',
     layout: 'split-right',
   },
   {
@@ -150,6 +154,8 @@ export const services: Service[] = [
     image: '/images/stock-04.webp',
     showcaseImage: '/images/stock-10.webp',
     detailImage: '/images/stock-15.webp',
+    detailVideo: '/images/service-micro-dramas.mp4',
+    detailVideoPoster: '/images/service-micro-dramas-poster.jpg',
     layout: 'stacked',
   },
   {
@@ -187,6 +193,8 @@ export const services: Service[] = [
     image: '/images/stock-05.webp',
     showcaseImage: '/images/stock-11.webp',
     detailImage: '/images/stock-17.webp',
+    detailVideo: '/images/service-documentaries.mp4',
+    detailVideoPoster: '/images/service-documentaries-poster.jpg',
     layout: 'offset',
   },
   {
@@ -224,6 +232,7 @@ export const services: Service[] = [
     image: '/images/stock-06.webp',
     showcaseImage: '/images/stock-12.webp',
     detailImage: '/images/stock-18.webp',
+    detailVideo: '/images/cd.mp4',
     layout: 'wide',
   },
 ]
