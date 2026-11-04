@@ -1,5 +1,6 @@
 import LegalLayout from '../components/LegalLayout'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 import { company } from '../data/company'
 
 /*
@@ -8,11 +9,7 @@ import { company } from '../data/company'
  * and adjust it to your jurisdiction and to the tools you actually use (analytics, form providers, hosting).
  */
 export default function Privacy() {
-  useSEO({
-    title: 'Privacy Policy',
-    description: 'How Ramayana Productions collects, uses and protects personal information shared through this website.',
-    path: '/privacy-policy',
-  })
+  useSEO(pageSEO.privacy)
 
   const { legalName, registeredAddress, privacyContact } = company.legal
 

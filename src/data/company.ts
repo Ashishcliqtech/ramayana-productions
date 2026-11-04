@@ -42,8 +42,7 @@ export const company: Company = {
   heroSupporting:
     'We transform imagination into cinematic reality through powerful storytelling, creative excellence and world-class production.',
 
-  /** PLACEHOLDER — replace with the official domain (also update public/sitemap.xml, public/robots.txt, index.html) */
-  siteUrl: 'https://www.your-domain.com',
+  siteUrl: 'https://ramayanaproductions.com',
 
   email: 'contact@ramayanaproductions.com',
   phone: '+91. 7506846678',

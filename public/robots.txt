@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Replace with your real domain before deploying
-Sitemap: https://www.your-domain.com/sitemap.xml
+Sitemap: https://ramayanaproductions.com/sitemap.xml

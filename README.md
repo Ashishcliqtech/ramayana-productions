@@ -3,13 +3,13 @@
 > **Stories That Stay With You.**
 > Premium film, media & creative production house — React · TypeScript · Vite · React Router · Framer Motion · Lucide.
 
-A complete, responsive, cinematic website: company and founder pages, 6 service detail pages, a production-process gallery, a validated contact form, SEO metadata, code splitting and reduced-motion support.
+A complete, responsive, cinematic website: company and founder pages, 6 service detail pages, a production-process gallery, a validated contact form, pre-rendered route-specific SEO metadata, structured data, code splitting and reduced-motion support.
 
 ---
 
 ## Validation
 
-The production build type-checks the app before generating the `dist/` output:
+The production build type-checks the app, generates the production bundle, and pre-renders every public route with route-specific metadata and structured data into `dist/`:
 
 ```bash
 npm run build
@@ -46,6 +46,8 @@ The site is a single-page app using client-side routing, so the host must serve 
 | **Cloudflare Pages** | Build `npm run build`, output `dist`. `_redirects` is honoured. |
 | **Any static host / cPanel** | Upload the contents of `dist/`. Add a rewrite of all paths to `/index.html` (Apache: `FallbackResource /index.html`, nginx: `try_files $uri /index.html;`). |
 
+`npm run build` pre-renders the public routes and generates `dist/sitemap.xml`. Update route titles and descriptions in `src/data/seo.ts`; service pages are generated from `src/data/services.ts`. After deploying, submit `https://ramayanaproductions.com/sitemap.xml` in Google Search Console and verify the domain there.
+
 ## Contact form
 
 The form validates name, email, optional phone, service and description (min. 20 characters).
@@ -67,6 +69,7 @@ The form validates name, email, optional phone, service and description (min. 20
 | Company name, tagline, email, phone, address, social links, legal details, optional hero video | `src/data/company.ts` |
 | Founder name, designation, photo, quote and vision text | `src/data/founder.ts` |
 | The six services (copy, workflow, layout, palette, optional photo) | `src/data/services.ts` |
+| Page titles, descriptions and canonical routes | `src/data/seo.ts` |
 | Operational strengths / why choose / team roles | `src/data/pillars.ts` |
 | Colours, spacing, fonts | `src/styles/tokens.css` |
 
@@ -86,8 +89,8 @@ Copy the approved portrait to `public/images/founder.jpg`, then in `src/data/fou
 
 - [ ] **Founder name** and **designation** — `src/data/founder.ts`
 - [ ] **Founder photograph** — `public/images/founder.jpg` + `founder.photo`
-- [ ] **Official email address** (currently `hello@your-domain.com`) — `src/data/company.ts` (`email`, `legal.privacyContact`)
-- [ ] **Domain** (currently `https://www.your-domain.com`) — `src/data/company.ts` (`siteUrl`), `index.html` (canonical + Open Graph), `public/robots.txt`, `public/sitemap.xml`
+- [x] **Official email address** (`contact@ramayanaproductions.com`) — `src/data/company.ts` (`email`, `legal.privacyContact`)
+- [x] **Domain** — `https://ramayanaproductions.com` is configured in `src/data/company.ts`, `index.html`, `public/robots.txt` and `public/sitemap.xml`
 - [ ] **Phone number** and **business address** — `src/data/company.ts` (hidden while empty)
 - [ ] **Social media URLs** — `src/data/company.ts` (each link is hidden while empty)
 - [ ] **Legal details** (registered legal name, registered address, governing law, last-updated date) — `company.legal`. The Privacy Policy and Terms pages are structured templates, **not legal advice** — have them reviewed by a qualified professional.
@@ -119,12 +122,13 @@ src/
   layouts/      MainLayout (nav, animated page transitions, footer, back-to-top)
   pages/        one file per route (lazy-loaded except Home)
   sections/     home page sections (Hero, Intro, Philosophy, ProductionGallery, …)
-  data/         typed, editable content (company, founder, services, pillars)
+  data/         typed, editable content (company, founder, SEO, services, pillars)
   hooks/        useSEO (per-page title, description, canonical, Open Graph)
   styles/       tokens.css, base.css, components.css, pages.css
   types/        shared TypeScript models
   utils/        enquiry validation + submission
 public/         favicon, robots.txt, sitemap.xml, SPA redirects, og-image
+scripts/        production route pre-rendering and sitemap generation
 ```
 
 ## Design, accessibility & performance notes

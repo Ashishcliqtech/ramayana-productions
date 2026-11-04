@@ -6,15 +6,11 @@ import CTASection from '../components/CTASection'
 import Button from '../components/Button'
 import { ImageReveal, Reveal, WordReveal } from '../components/Reveal'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 import { services } from '../data/services'
 
 export default function Services() {
-  useSEO({
-    title: 'Our Services',
-    description:
-      'Web series, ad commercials, music videos, micro dramas, documentaries, and feature & short films — end-to-end production from Ramayana Productions.',
-    path: '/services',
-  })
+  useSEO(pageSEO.services)
 
   return (
     <>

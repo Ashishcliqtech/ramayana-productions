@@ -32,7 +32,11 @@ export function useSEO({ title, description, path, noIndex = false }: SEOOptions
     upsertMeta('property', 'og:description', description)
     upsertMeta('property', 'og:url', url)
     upsertMeta('property', 'og:image', `${company.siteUrl}/og-image.svg`)
+    upsertMeta('property', 'og:image:alt', `${company.name} — Stories That Stay With You`)
     upsertMeta('name', 'twitter:card', 'summary_large_image')
+    upsertMeta('name', 'twitter:title', fullTitle)
+    upsertMeta('name', 'twitter:description', description)
+    upsertMeta('name', 'twitter:image', `${company.siteUrl}/og-image.svg`)
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
     if (!canonical) {

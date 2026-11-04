@@ -1,5 +1,6 @@
 import LegalLayout from '../components/LegalLayout'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 import { company } from '../data/company'
 
 /*
@@ -7,11 +8,7 @@ import { company } from '../data/company'
  * This is a structured starting template, not legal advice — have it reviewed by qualified counsel.
  */
 export default function Terms() {
-  useSEO({
-    title: 'Terms & Conditions',
-    description: 'The terms and conditions for using the Ramayana Productions website and sending a project enquiry.',
-    path: '/terms-and-conditions',
-  })
+  useSEO(pageSEO.terms)
 
   const { legalName, governingLaw, privacyContact } = company.legal
 

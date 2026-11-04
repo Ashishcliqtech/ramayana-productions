@@ -8,6 +8,7 @@ import CTASection from '../components/CTASection'
 import Button from '../components/Button'
 import { ImageReveal, Reveal } from '../components/Reveal'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 import { company } from '../data/company'
 import { founder } from '../data/founder'
 import { pillars } from '../data/pillars'
@@ -20,12 +21,7 @@ const approach = [
 ]
 
 export default function About() {
-  useSEO({
-    title: 'About Us',
-    description:
-      'Learn about Ramayana Productions — a forward-thinking film production house driven by a passion for storytelling, with end-to-end production capabilities.',
-    path: '/about',
-  })
+  useSEO(pageSEO.about)
 
   return (
     <>

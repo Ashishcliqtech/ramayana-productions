@@ -6,6 +6,7 @@ import CinematicImage from '../components/CinematicImage'
 import CTASection from '../components/CTASection'
 import { ImageReveal, Reveal } from '../components/Reveal'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 import { pillars } from '../data/pillars'
 import type { Pillar } from '../types'
 
@@ -23,12 +24,7 @@ const icons: Record<Pillar['icon'], LucideIcon> = {
 const stages = ['Concept', 'Script', 'Pre-production', 'Production', 'Post-production', 'Delivery']
 
 export default function Capabilities() {
-  useSEO({
-    title: 'Production Capabilities',
-    description:
-      'In-house creative professionals, seasoned directors, veteran Directors of Photography, strategic partnerships and scalable, end-to-end production capacity.',
-    path: '/capabilities',
-  })
+  useSEO(pageSEO.capabilities)
 
   return (
     <>

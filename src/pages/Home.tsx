@@ -10,14 +10,10 @@ import TeamIntro from '../sections/home/TeamIntro'
 import CTASection from '../components/CTASection'
 import { Divider } from '../components/SectionHeading'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 
 export default function Home() {
-  useSEO({
-    title: 'Ramayana Productions — Stories That Stay With You',
-    description:
-      'Ramayana Productions is a premium film, media and creative production house — web series, ad commercials, music videos, micro dramas, documentaries, feature and short films.',
-    path: '/',
-  })
+  useSEO(pageSEO.home)
 
   return (
     <>

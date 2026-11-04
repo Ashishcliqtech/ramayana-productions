@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { MotionConfig } from 'framer-motion'
 import App from './App'
@@ -10,7 +10,8 @@ import './styles/pages.css'
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
-createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root')!
+const app = (
   <StrictMode>
     <BrowserRouter>
       {/* Respects the visitor's reduced-motion preference across every animation */}
@@ -18,5 +19,11 @@ createRoot(document.getElementById('root')!).render(
         <App />
       </MotionConfig>
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
+
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, app)
+} else {
+  createRoot(rootElement).render(app)
+}

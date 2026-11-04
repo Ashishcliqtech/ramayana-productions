@@ -4,15 +4,11 @@ import FounderPortrait from '../components/FounderPortrait'
 import CTASection from '../components/CTASection'
 import { Reveal } from '../components/Reveal'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 import { founder } from '../data/founder'
 
 export default function FounderVision() {
-  useSEO({
-    title: "Founder's Vision",
-    description:
-      "Founder's Vision: Redefining the Art of Storytelling. Discover the philosophy behind Ramayana Productions — heart, depth and visual poetry in every story.",
-    path: '/founders-vision',
-  })
+  useSEO(pageSEO.foundersVision)
 
   return (
     <>

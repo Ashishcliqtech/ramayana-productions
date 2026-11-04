@@ -6,7 +6,7 @@
   "description": "Ramayana Productions — Stories That Stay With You. Premium film, media & creative production house website.",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/prerender-seo.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit"
   },

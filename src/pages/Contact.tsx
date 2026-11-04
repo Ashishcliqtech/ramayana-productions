@@ -6,6 +6,7 @@ import PageHero from '../components/PageHero'
 import Button from '../components/Button'
 import { Reveal } from '../components/Reveal'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 import { company } from '../data/company'
 import { services } from '../data/services'
 import { submitEnquiry, validateEnquiry } from '../utils/enquiry'
@@ -26,11 +27,7 @@ export default function Contact() {
   const [status, setStatus] = useState<Status>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
-  useSEO({
-    title: 'Contact Us',
-    description: 'Start a project with Ramayana Productions. Send an enquiry about web series, commercials, music videos, micro dramas, documentaries or films.',
-    path: '/contact',
-  })
+  useSEO(pageSEO.contact)
 
   const socials = (Object.keys(company.social) as (keyof typeof company.social)[]).filter((k) => company.social[k])
 

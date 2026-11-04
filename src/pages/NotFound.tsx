@@ -2,15 +2,11 @@ import { motion, useReducedMotion } from 'framer-motion'
 import CinematicImage from '../components/CinematicImage'
 import Button from '../components/Button'
 import { useSEO } from '../hooks/useSEO'
+import { pageSEO } from '../data/seo'
 
 export default function NotFound() {
   const reduce = useReducedMotion()
-  useSEO({
-    title: 'Page Not Found',
-    description: 'The page you are looking for could not be found.',
-    path: '/404',
-    noIndex: true,
-  })
+  useSEO(pageSEO.notFound)
 
   return (
     <section className="not-found">
